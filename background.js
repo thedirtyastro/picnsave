@@ -16,7 +16,7 @@ chrome.runtime.onInstalled.addListener(async () => {
   }
 });
 
-function safeFilename(input, fallback = "pixora-image") {
+function safeFilename(input, fallback = "picnsave-image") {
   const cleaned = String(input || fallback)
     .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "-")
     .replace(/\s+/g, " ")
@@ -42,7 +42,7 @@ function filenameFromUrl(rawUrl, mimeType) {
     "image/bmp": ".bmp",
     "image/tiff": ".tiff"
   };
-  return safeFilename("pixora-image" + (extensionByMime[mimeType] || ".png"));
+  return safeFilename("picnsave-image" + (extensionByMime[mimeType] || ".png"));
 }
 
 function isAllowedDownloadUrl(rawUrl) {
@@ -55,7 +55,7 @@ function isAllowedDownloadUrl(rawUrl) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message?.type !== "PIXORA_DOWNLOAD") return;
+  if (message?.type !== "PICNSAVE_DOWNLOAD") return;
 
   (async () => {
     try {
@@ -71,7 +71,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       }
 
       const settings = await chrome.storage.sync.get(DEFAULTS);
-      if (!settings.enabled) throw new Error("Pixora is paused.");
+      if (!settings.enabled) throw new Error("Picnsave is paused.");
 
       const filename = safeFilename(
         message.filename || filenameFromUrl(message.url, message.mimeType)

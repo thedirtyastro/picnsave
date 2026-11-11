@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Pixora",
-  "short_name": "Pixora",
+  "name": "Picnsave",
+  "short_name": "Picnsave",
   "version": "1.0.0",
   "description": "Hover over images, previews, SVGs and CSS backgrounds to download them in one click.",
   "permissions": ["downloads", "storage"],
@@ -10,7 +10,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Pixora",
+    "default_title": "Picnsave",
     "default_popup": "popup.html"
   },
   "options_page": "options.html",

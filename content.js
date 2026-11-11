@@ -1,8 +1,8 @@
 (() => {
   "use strict";
 
-  if (window.__PIXORA_IMAGE_DOWNLOADER__) return;
-  window.__PIXORA_IMAGE_DOWNLOADER__ = true;
+  if (window.__PICNSAVE_IMAGE_DOWNLOADER__) return;
+  window.__PICNSAVE_IMAGE_DOWNLOADER__ = true;
 
   const HOST_ID = "__saru_image_downloader_host__";
   const DEFAULTS = {
@@ -223,7 +223,7 @@
       const last = decodeURIComponent(url.pathname.split("/").filter(Boolean).pop() || "");
       if (last && /\.[a-z0-9]{2,8}$/i.test(last)) return last;
     } catch {}
-    return `pixora-image${extensionFor(descriptor)}`;
+    return `picnsave-image${extensionFor(descriptor)}`;
   }
 
   function extensionFor(descriptor) {
@@ -318,7 +318,7 @@
         toastMessage("Download started");
       } else {
         const response = await chrome.runtime.sendMessage({
-          type: "PIXORA_DOWNLOAD",
+          type: "PICNSAVE_DOWNLOAD",
           url: descriptor.url,
           filename,
           mimeType: descriptor.mimeType
