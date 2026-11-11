@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pixora</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand-mark">S</div>
+      <div>
+        <h1>Pixora</h1>
+        <p>One hover. One click. Saved.</p>
+      </div>
+    </header>
+    <div class="status-row">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">Checking status…</span>
+      <label class="switch">
+        <input id="enabled" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="hint">
+      <span class="hint-icon">✦</span>
+      <p>Hover over an image, SVG or image background on a webpage to reveal the glass download button.</p>
+    </div>
+    <button class="settings-button" id="openOptions" type="button">Settings <span>↗</span></button>
+    <footer>Made with Pixora · Version 1.0.0</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

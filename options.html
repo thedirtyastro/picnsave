@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pixora Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand-mark">S</div>
+      <div><h1>Settings</h1><p>Make Saru work your way.</p></div>
+    </header>
+    <section>
+      <h2>Image detection</h2>
+      <label class="setting"><span><b>CSS background images</b><small>Detect images used as element backgrounds.</small></span><input type="checkbox" id="includeBackgrounds"></label>
+      <label class="setting"><span><b>Inline and linked SVG images</b><small>Allow SVG image elements and inline SVG graphics.</small></span><input type="checkbox" id="includeSvg"></label>
+      <label class="setting"><span><b>Video poster images</b><small>Detect the poster image shown before a video plays.</small></span><input type="checkbox" id="includeVideoPoster"></label>
+      <h2>Button</h2>
+      <label class="setting"><span><b>Show descriptive button label</b><small>Display “Download image” instead of only an icon.</small></span><input type="checkbox" id="showFilename"></label>
+    </section>
+    <p class="saved" id="saved" role="status">Settings are saved automatically.</p>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
